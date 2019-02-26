@@ -7,12 +7,9 @@ node {
         checkout scm
     }
 
-    stage('build user') {
-      steps {
-        wrap([$class: 'BuildUser']) {
-          sh 'echo "${BUILD_USER}"'
-        }
-      }
+    @NonCPS
+    def getBuildUser() {
+        return currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
     }
 
     stage('Build image') {
