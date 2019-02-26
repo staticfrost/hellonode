@@ -6,16 +6,10 @@ node {
 
         checkout scm
     }
-
-    @NonCPS
-    def getBuildUser() {
-        return currentBuild.rawBuild.getCause(Cause.UserIdCause).getUserId()
-    }
-
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        whoami
+         sh 'echo "$USER"'
         app = docker.build("getintodevops/hellonode")
     }
 
