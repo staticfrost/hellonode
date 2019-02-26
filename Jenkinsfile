@@ -3,14 +3,11 @@ node {
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
-        sh 'echo "Clone Repo"'
         checkout scm
     }
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-         sh 'echo "build it"'
-         sh 'echo $USER'
         app = docker.build("getintodevops/hellonode")
     }
 
