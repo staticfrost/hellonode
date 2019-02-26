@@ -1,6 +1,6 @@
 {
   "name": "getintodevops-hellonode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Hello World HTTP server",
   "main": "main.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/getintodevops/masterclass-codeexamples/"
+    "url": "https://github.com/staticfrost/hellonode"
   },
   "keywords": [
     "node",
